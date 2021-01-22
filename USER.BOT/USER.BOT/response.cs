@@ -240,4 +240,18 @@ namespace USER.BOT
             public bool groups_can_post { get; set; }
         }
     }
+
+    // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse); 
+    
+
+    public class MembersGet
+    {
+        public Response response { get; set; }
+
+        public class Response
+        {
+            public int count { get; set; }
+            public List<int> items { get; set; }
+        }
+    }
 }

@@ -39,6 +39,7 @@
             this.buttonMassComment = new System.Windows.Forms.Button();
             this.buttonFindComments = new System.Windows.Forms.Button();
             this.buttonGDZ = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvatar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,6 +54,7 @@
             // 
             // buttonSelebrate
             // 
+            this.buttonSelebrate.Enabled = false;
             this.buttonSelebrate.Location = new System.Drawing.Point(655, 70);
             this.buttonSelebrate.Name = "buttonSelebrate";
             this.buttonSelebrate.Size = new System.Drawing.Size(256, 22);
@@ -62,6 +64,7 @@
             // 
             // buttonGetPopularPost
             // 
+            this.buttonGetPopularPost.Enabled = false;
             this.buttonGetPopularPost.Location = new System.Drawing.Point(655, 306);
             this.buttonGetPopularPost.Name = "buttonGetPopularPost";
             this.buttonGetPopularPost.Size = new System.Drawing.Size(258, 24);
@@ -72,6 +75,7 @@
             // 
             // buttonTextBot
             // 
+            this.buttonTextBot.Enabled = false;
             this.buttonTextBot.Location = new System.Drawing.Point(655, 41);
             this.buttonTextBot.Name = "buttonTextBot";
             this.buttonTextBot.Size = new System.Drawing.Size(256, 23);
@@ -81,6 +85,7 @@
             // 
             // buttonLiking
             // 
+            this.buttonLiking.Enabled = false;
             this.buttonLiking.Location = new System.Drawing.Point(655, 12);
             this.buttonLiking.Name = "buttonLiking";
             this.buttonLiking.Size = new System.Drawing.Size(256, 23);
@@ -116,6 +121,7 @@
             // 
             // buttonMassComment
             // 
+            this.buttonMassComment.Enabled = false;
             this.buttonMassComment.Location = new System.Drawing.Point(655, 98);
             this.buttonMassComment.Name = "buttonMassComment";
             this.buttonMassComment.Size = new System.Drawing.Size(256, 22);
@@ -125,6 +131,7 @@
             // 
             // buttonFindComments
             // 
+            this.buttonFindComments.Enabled = false;
             this.buttonFindComments.Location = new System.Drawing.Point(655, 126);
             this.buttonFindComments.Name = "buttonFindComments";
             this.buttonFindComments.Size = new System.Drawing.Size(256, 22);
@@ -135,6 +142,7 @@
             // 
             // buttonGDZ
             // 
+            this.buttonGDZ.Enabled = false;
             this.buttonGDZ.Location = new System.Drawing.Point(655, 154);
             this.buttonGDZ.Name = "buttonGDZ";
             this.buttonGDZ.Size = new System.Drawing.Size(256, 22);
@@ -142,11 +150,24 @@
             this.buttonGDZ.Text = "ГДЗ бот";
             this.buttonGDZ.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(324, 214);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(243, 25);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Программа не куплена";
+            this.label1.Visible = false;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(923, 380);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonGDZ);
             this.Controls.Add(this.buttonFindComments);
             this.Controls.Add(this.buttonMassComment);
@@ -180,6 +201,7 @@
         private System.Windows.Forms.Button buttonMassComment;
         private System.Windows.Forms.Button buttonFindComments;
         private System.Windows.Forms.Button buttonGDZ;
+        private System.Windows.Forms.Label label1;
     }
 }
 

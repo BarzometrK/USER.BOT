@@ -16,6 +16,10 @@ namespace USER.BOT
     {
         string access_token;
         string user_id;
+        public MembersGet mg;
+        public WebClient cl;
+        public string Answer;
+
         public mainForm()
         {
             InitializeComponent();
@@ -30,6 +34,16 @@ namespace USER.BOT
                 "&display=page&redirect_uri=https://oauth.vk.com/blank.html&"+
                 "scope=friends+groups+wall&"+
                 "response_type=token&v=5.124&state=123456");
+
+            //https://api.vk.com/method/groups.getMembers?group_id=201385065&access_token=8bb6dceb574e3549ca5805f049422d778fb5d065f660728fc9460b051e60d9ca900e0c3adced85291b6ca&v=5.124
+        }
+
+        private string GetAnswer(string Request, string AccessToken)
+        {
+            string Req = Request + AccessToken + "&v=5.124";
+            cl = new WebClient();
+            Answer = Encoding.UTF8.GetString(cl.DownloadData(Req));
+            return Answer;
         }
 
         private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
@@ -59,6 +73,29 @@ namespace USER.BOT
                 pictureBoxAvatar.ImageLocation = ug.response[0].photo_100;
                 user_id = ug.response[0].id.ToString();
                 webBrowser1.Hide();
+
+
+                Request = "https://api.vk.com/method/groups.getMembers?group_id=201385065&";
+                Answer = GetAnswer(Request, access_token);
+                mg = JsonConvert.DeserializeObject<MembersGet>(Answer);
+
+                foreach (int MemberId in mg.response.items)
+                {
+                    if (Convert.ToInt32(user_id) == MemberId)
+                    {
+                        buttonFindComments.Enabled = true;
+                        buttonGDZ.Enabled = true;
+                        buttonGetPopularPost.Enabled = true;
+                        buttonLiking.Enabled = true;
+                        buttonMassComment.Enabled = true;
+                        buttonSelebrate.Enabled = true;
+                        buttonTextBot.Enabled = true;
+                    }
+                }
+                if (buttonTextBot.Enabled != true)
+                {
+                    label1.Visible = true;
+                }
             }
         }
 
@@ -76,6 +113,11 @@ namespace USER.BOT
             form.access_token = access_token;
             form.user_id = user_id;
             form.ShowDialog();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://vk.com/club201385065");
         }
     }
 }
