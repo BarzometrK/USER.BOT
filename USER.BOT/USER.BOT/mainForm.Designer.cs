@@ -153,12 +153,13 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(324, 214);
+            this.label1.Location = new System.Drawing.Point(245, 215);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(243, 25);
+            this.label1.Size = new System.Drawing.Size(388, 50);
             this.label1.TabIndex = 19;
-            this.label1.Text = "Программа не куплена";
+            this.label1.Text = "              Программа не куплена\r\nНажмите для перехода в сообщество";
             this.label1.Visible = false;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
